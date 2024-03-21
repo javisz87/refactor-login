@@ -75,7 +75,7 @@ const initializePassport = () => {
 		clientID: clientID,
 		clientSecret: clientSecret,
 		callbackURL: callbackURL
-	}, async (accessToken, refreshToken, profile, done) => {
+	}, async (_accessToken, _refreshToken, profile, done) => {
 		console.log(profile)
 		try{
 			const user = await userModel.findOne({ email: profile._json.email })
